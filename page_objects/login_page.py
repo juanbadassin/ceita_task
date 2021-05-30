@@ -1,6 +1,5 @@
 class LoginPage():
 
-
     USERNAMAE_INPUT = "un"
     PASSWORD_INPUT = "pw"
     SINGIN_BTN = "btn primary"
@@ -10,11 +9,8 @@ class LoginPage():
     NOMBRE_EXHIBICION = "de8a7a6c750895ffa0554040ea436941"
     TEMA_EXHIBICION = "147b7d8997ae86d5138581b25ac8c77f"
 
-
     def __init__(self, driver):
         self.driver = driver
-
-
 
     def login_in_app(self, username, password):
         username_input = self.driver.find_element_by_id(self.USERNAME_INPUT)
@@ -26,15 +22,9 @@ class LoginPage():
         singin_btn = self.driver.find_element_by_class(self.SINGIN_BTN)
         singin_btn.click()
 
-
-
-
-
-
     def is_singin_succesfull(self):
         post_here = self.driver.find_element_by_id(self.POST_HERE).is_displayed()
         return post_here
-
 
     def action(self):
         action_btn = self.driver.find_element_by_class(self.ACTION_BTN)
