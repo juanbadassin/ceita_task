@@ -1,6 +1,6 @@
 class LoginPage():
 
-    USERNAMAE_INPUT = "un"
+    USERNAME_INPUT = "un"
     PASSWORD_INPUT = "pw"
     SINGIN_BTN = "btn primary"
     POST_HERE = "gwt-uid-9"

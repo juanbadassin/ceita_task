@@ -12,7 +12,11 @@ class Testlogin(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome()
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--window-size=1420,1080')
+        chrome_options.add_argument('--headless')
+        cls.driver = webdriver.Chrome(options=chrome_options)
         cls.driver.get("https://ceita-dev.appiancloud.com/suit/")
         cls.driver.maximize_window()
         cls.login_page = LoginPage(driver = cls.driver)
