@@ -2,8 +2,8 @@ class LoginPage():
 
     USERNAME_INPUT = "un"
     PASSWORD_INPUT = "pw"
-    SINGIN_BTN = "btn primary"
-    POST_HERE = "gwt-uid-9"
+    SINGIN_BTN = "[type=submit]"
+    USER_PROFILE = "UserProfileLayout---current_user_menu_wrapper"
     ACTION_BTN = "SiteMenuTab_TEMPO_SITE---nav_label"
     EXHIBICION_LINK = "aui-ActionLink GPGIXADDAP"
     NOMBRE_EXHIBICION = "de8a7a6c750895ffa0554040ea436941"
@@ -19,18 +19,18 @@ class LoginPage():
         password_input = self.driver.find_element_by_id(self.PASSWORD_INPUT)
         password_input.send_keys(password)
 
-        singin_btn = self.driver.find_element_by_class(self.SINGIN_BTN)
+        singin_btn = self.driver.find_element_by_css_selector(self.SINGIN_BTN)
         singin_btn.click()
 
     def is_singin_succesfull(self):
-        post_here = self.driver.find_element_by_id(self.POST_HERE).is_displayed()
-        return post_here
+        profile_layout = self.driver.find_element_by_class_name(self.USER_PROFILE).is_displayed()
+        return profile_layout
 
     def action(self):
-        action_btn = self.driver.find_element_by_class(self.ACTION_BTN)
+        action_btn = self.driver.find_element_by_class_name(self.ACTION_BTN)
         action_btn.click()
 
-        exhibicion_link = self.driver.find_element_by_class(self.EXHIBICION_LINK)
+        exhibicion_link = self.driver.find_element_by_class_name(self.EXHIBICION_LINK)
         exhibicion_link.click()
 
     def fill_the_fields(self, nombre_exhibicion, tema_exhibicion):
